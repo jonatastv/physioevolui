@@ -9,6 +9,7 @@ import com.projetointegrador.physioevolui.bean.ErroBean;
 import com.projetointegrador.physioevolui.bean.TipoUsuarioBean;
 import com.projetointegrador.physioevolui.builder.TipoUsuarioBuilder;
 import com.projetointegrador.physioevolui.service.TipoUsuarioService;
+import com.projetointegrador.physioevolui.utils.ExceptionTratada;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -16,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 @Transactional
@@ -33,6 +36,17 @@ public class TipoUsuarioServiceImpl implements TipoUsuarioService {
             return tipoUsuarioBuilder.montarTipoUsuarioBean(tipoUsuarioDAO.incluir(tipoUsuarioBuilder.montarTipoUsuarioEntity(tipoUsuarioBean)));
         } catch (Exception e) {
             return montarErro(e);
+        }
+    }
+    
+    
+     @Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+     public void deletarTipoUsuario(TipoUsuarioBean tipoUsuarioBean){
+        
+        try {
+            tipoUsuarioDAO.excluir(tipoUsuarioBean.getInt_tipo_usuario_id());
+        } catch (ExceptionTratada ex) {
+            Logger.getLogger(TipoUsuarioServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

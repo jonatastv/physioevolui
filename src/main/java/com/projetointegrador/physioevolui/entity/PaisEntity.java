@@ -4,9 +4,25 @@
 
 package com.projetointegrador.physioevolui.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "paciente")
 public class PaisEntity {
 
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    
+   @Column(name = "pais_id")    
     private Integer pais_id;
+
+   @Column(name = "nome_pais")   
     private String nome_pais;
 
     public PaisEntity() {

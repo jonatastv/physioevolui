@@ -11,6 +11,8 @@ import java.util.List;
 public interface FisioterapeutaService {
 
     FisioterapeutaBean criarFisioterapeuta(FisioterapeutaBean fisioterapeutaBean);
+    
+    void deletarFisioterapeuta(FisioterapeutaBean fisioterapeutaBean);
 
     FisioterapeutaBean alterarFisioterapeuta(FisioterapeutaBean fisioterapeutaBean);
 

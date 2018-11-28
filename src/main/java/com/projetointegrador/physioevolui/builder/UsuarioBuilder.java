@@ -93,7 +93,7 @@ public class UsuarioBuilder {
      * @param usuarioBeanList
      * @return
      */
-    public List<JSONObject> montarJsonListUsuarioBean(List<UsuarioBean> usuarioBeanList) {
+         public List<JSONObject> montarJsonListUsuarioBean(List<UsuarioBean> usuarioBeanList) {
         List<JSONObject> jsonObjectList = new ArrayList<>();
 
         for (UsuarioBean usuarioBean : usuarioBeanList) {

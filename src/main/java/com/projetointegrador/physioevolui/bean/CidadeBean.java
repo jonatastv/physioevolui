@@ -11,6 +11,7 @@ public class CidadeBean {
     private Integer cidade_id;
     private Integer uf_id;
     private String nome_cidade;
+    private ErroBean erroBean;
 
     public CidadeBean() {
     }
@@ -20,6 +21,16 @@ public class CidadeBean {
         this.uf_id = uf_id;
         this.nome_cidade = nome_cidade;
     }
+
+    public CidadeBean(ErroBean erroBean) {
+        this.erroBean = erroBean;
+    }
+
+    public CidadeBean(Integer cidade_id) {
+        this.cidade_id = cidade_id;
+    }
+    
+    
 
     public Integer getCidade_id() {
         return cidade_id;
@@ -44,4 +55,14 @@ public class CidadeBean {
     public void setNome_cidade(String nome_cidade) {
         this.nome_cidade = nome_cidade;
     }
+
+    public ErroBean getErroBean() {
+        return erroBean;
+    }
+
+    public void setErroBean(ErroBean erroBean) {
+        this.erroBean = erroBean;
+    }
+    
+    
 }

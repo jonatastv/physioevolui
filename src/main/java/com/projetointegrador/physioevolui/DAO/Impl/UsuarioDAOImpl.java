@@ -11,3 +11,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class UsuarioDAOImpl extends GenericoDAOImpl<UsuarioEntity, Integer> implements UsuarioDAO{
 }
+

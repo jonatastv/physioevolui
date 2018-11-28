@@ -12,6 +12,8 @@ public interface UsuarioService {
 
     UsuarioBean criarUsuario(UsuarioBean usuarioBean);
 
+    void deletarUsuario(UsuarioBean usuarioBean);
+         
     UsuarioBean alterarUsuario(UsuarioBean usuarioBean);
 
     UsuarioBean buscarUsuarioPorId(UsuarioBean usuarioBean);

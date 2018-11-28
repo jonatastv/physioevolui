@@ -11,6 +11,8 @@ import java.util.List;
 public interface TipoUsuarioService {
 
     TipoUsuarioBean criarTipoUsuario(TipoUsuarioBean tipoUsuarioBean);
+    
+    void deletarTipoUsuario(TipoUsuarioBean tipoUsuarioBean);
 
     TipoUsuarioBean alterarTipoUsuario(TipoUsuarioBean tipoUsuarioBean);
 

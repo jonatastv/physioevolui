@@ -92,4 +92,12 @@ public class UsuarioResource {
 
         return new ResponseEntity<>(usuarioBuilder.montarJsonListUsuarioBean(usuarioService.listarUsuarios()), HttpStatus.OK);
     }
+    
+    @RequestMapping(value = "/deletar", method = RequestMethod.POST) 
+    public ResponseEntity<Void> deletarUsuario(@Valid @RequestBody UsuarioBean bean) {
+
+        usuarioService.deletarUsuario(bean);
+
+        return ResponseEntity.ok().build();
+    }
 }

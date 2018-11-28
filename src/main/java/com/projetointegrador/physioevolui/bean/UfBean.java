@@ -11,9 +11,20 @@ public class UfBean {
     private Integer pais_id;
     private String nome_uf;
     private String sigla_uf;
+    private ErroBean erroBean;
 
     public UfBean() {
     }
+
+    public UfBean(ErroBean erroBean) {
+        this.erroBean = erroBean;
+    }
+
+    public UfBean(Integer uf_id) {
+        this.uf_id = uf_id;
+    }
+    
+    
 
     public UfBean(Integer uf_id, Integer pais_id, String nome_uf, String sigla_uf) {
         this.uf_id = uf_id;
@@ -53,4 +64,14 @@ public class UfBean {
     public void setSigla_uf(String sigla_uf) {
         this.sigla_uf = sigla_uf;
     }
+
+    public ErroBean getErroBean() {
+        return erroBean;
+    }
+
+    public void setErroBean(ErroBean erroBean) {
+        this.erroBean = erroBean;
+    }
+    
+    
 }

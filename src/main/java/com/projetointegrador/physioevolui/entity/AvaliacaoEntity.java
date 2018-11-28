@@ -4,142 +4,87 @@
 
 package com.projetointegrador.physioevolui.entity;
 
-public class AvaliacaoEntity {
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.Collection;
+import java.util.List;
 
-    private Integer avaliacao_Id;
-    private Integer usuario_id;
-    private Integer paciente_id;
-    private Integer medico_responsavel_id;
-    private String diagnostico_clinico;
-    private String queixa_principal;
-    private String queixa_secundaria;
-    private String historico_familiar;
-    private String pressao_arterial;
-    private String temperatura_corporal;
-    private String hma_hmp;
-    private String fc;
-    private String fr;
+
+@Entity
+@Table(name = "avaliacao")
+public class AvaliacaoEntity implements Serializable{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "int_avaliacao_id")
+    private Integer int_avaliacao_id;
+   
+
+   
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "int_fisioterapeuta_id", referencedColumnName = "int_fisioterapeuta_id", nullable = false)
+    private FisioterapeutaEntity fisioterapeutaEntity;
+    
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "avaliacaoposturalvistaposterior_id", referencedColumnName = "avaliacaoposturalvistaposterior_id", nullable = false)
+    private AvaliacaoPosturalVistaPosteriorEntity avaliacaoPosturalVistaPosteriorEntity;
+    
+  /*  @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "int_id_tipo_marcha", referencedColumnName = "int_id_tipo_marcha", nullable = false)
+    private TipoMarchaEntity tipoMarchaEntity;
+*/
+  /*  public AvaliacaoEntity(Integer int_avaliacao_id, FisioterapeutaEntity fisioterapeutaEntity, AvaliacaoPosturalVistaPosteriorEntity avaliacaoPosturalVistaPosteriorEntity, TipoMarchaEntity tipoMarchaEntity) {
+        this.int_avaliacao_id = int_avaliacao_id;
+        this.fisioterapeutaEntity = fisioterapeutaEntity;
+        this.avaliacaoPosturalVistaPosteriorEntity = avaliacaoPosturalVistaPosteriorEntity;
+        this.tipoMarchaEntity = tipoMarchaEntity;
+    }
+    */
+    
 
     public AvaliacaoEntity() {
     }
 
-    public AvaliacaoEntity(Integer avaliacao_Id, Integer usuario_id, Integer paciente_id, Integer medico_responsavel_id, String diagnostico_clinico, String queixa_principal, String queixa_secundaria, String hma_hmp, String historico_familiar, String fc, String fr, String pressao_arterial, String temperatura_corporal) {
-        this.avaliacao_Id = avaliacao_Id;
-        this.usuario_id = usuario_id;
-        this.paciente_id = paciente_id;
-        this.medico_responsavel_id = medico_responsavel_id;
-        this.diagnostico_clinico = diagnostico_clinico;
-        this.queixa_principal = queixa_principal;
-        this.queixa_secundaria = queixa_secundaria;
-        this.hma_hmp = hma_hmp;
-        this.historico_familiar = historico_familiar;
-        this.fc = fc;
-        this.fr = fr;
-        this.pressao_arterial = pressao_arterial;
-        this.temperatura_corporal = temperatura_corporal;
+    public AvaliacaoEntity(Integer int_avaliacao_id, FisioterapeutaEntity fisioterapeutaEntity, AvaliacaoPosturalVistaPosteriorEntity avaliacaoPosturalVistaPosteriorEntity) {
+        this.int_avaliacao_id = int_avaliacao_id;
+        this.fisioterapeutaEntity = fisioterapeutaEntity;
+        this.avaliacaoPosturalVistaPosteriorEntity = avaliacaoPosturalVistaPosteriorEntity;
     }
 
-    public Integer getAvaliacao_Id() {
-        return avaliacao_Id;
+    public Integer getInt_avaliacao_id() {
+        return int_avaliacao_id;
     }
 
-    public void setAvaliacao_Id(Integer avaliacao_Id) {
-        this.avaliacao_Id = avaliacao_Id;
+    public void setInt_avaliacao_id(Integer int_avaliacao_id) {
+        this.int_avaliacao_id = int_avaliacao_id;
     }
 
-    public Integer getUsuario_id() {
-        return usuario_id;
+    public FisioterapeutaEntity getFisioterapeutaEntity() {
+        return fisioterapeutaEntity;
     }
 
-    public void setUsuario_id(Integer usuario_id) {
-        this.usuario_id = usuario_id;
+    public void setFisioterapeutaEntity(FisioterapeutaEntity fisioterapeutaEntity) {
+        this.fisioterapeutaEntity = fisioterapeutaEntity;
     }
 
-    public Integer getPaciente_id() {
-        return paciente_id;
+    public AvaliacaoPosturalVistaPosteriorEntity getAvaliacaoPosturalVistaPosteriorEntity() {
+        return avaliacaoPosturalVistaPosteriorEntity;
     }
 
-    public void setPaciente_id(Integer paciente_id) {
-        this.paciente_id = paciente_id;
+    public void setAvaliacaoPosturalVistaPosteriorEntity(AvaliacaoPosturalVistaPosteriorEntity avaliacaoPosturalVistaPosteriorEntity) {
+        this.avaliacaoPosturalVistaPosteriorEntity = avaliacaoPosturalVistaPosteriorEntity;
     }
 
-    public Integer getMedico_responsavel_id() {
-        return medico_responsavel_id;
+   /* public TipoMarchaEntity getTipoMarchaEntity() {
+        return tipoMarchaEntity;
     }
 
-    public void setMedico_responsavel_id(Integer medico_responsavel_id) {
-        this.medico_responsavel_id = medico_responsavel_id;
+    public void setTipoMarchaEntity(TipoMarchaEntity tipoMarchaEntity) {
+        this.tipoMarchaEntity = tipoMarchaEntity;
     }
-
-    public String getDiagnostico_clinico() {
-        return diagnostico_clinico;
-    }
-
-    public void setDiagnostico_clinico(String diagnostico_clinico) {
-        this.diagnostico_clinico = diagnostico_clinico;
-    }
-
-    public String getQueixa_principal() {
-        return queixa_principal;
-    }
-
-    public void setQueixa_principal(String queixa_principal) {
-        this.queixa_principal = queixa_principal;
-    }
-
-    public String getQueixa_secundaria() {
-        return queixa_secundaria;
-    }
-
-    public void setQueixa_secundaria(String queixa_secundaria) {
-        this.queixa_secundaria = queixa_secundaria;
-    }
-
-    public String getHma_hmp() {
-        return hma_hmp;
-    }
-
-    public void setHma_hmp(String hma_hmp) {
-        this.hma_hmp = hma_hmp;
-    }
-
-    public String getHistorico_familiar() {
-        return historico_familiar;
-    }
-
-    public void setHistorico_familiar(String historico_familiar) {
-        this.historico_familiar = historico_familiar;
-    }
-
-    public String getFc() {
-        return fc;
-    }
-
-    public void setFc(String fc) {
-        this.fc = fc;
-    }
-
-    public String getFr() {
-        return fr;
-    }
-
-    public void setFr(String fr) {
-        this.fr = fr;
-    }
-
-    public String getPressao_arterial() {
-        return pressao_arterial;
-    }
-
-    public void setPressao_arterial(String pressao_arterial) {
-        this.pressao_arterial = pressao_arterial;
-    }
-
-    public String getTemperatura_corporal() {
-        return temperatura_corporal;
-    }
-
-    public void setTemperatura_corporal(String temperatura_corporal) {
-        this.temperatura_corporal = temperatura_corporal;
-    }
+    */
+    
+    
+   
 }

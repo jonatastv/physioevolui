@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * classe responsável pela implementação das regras de negócio da aplicação
@@ -45,6 +47,17 @@ public class UsuarioServiceImpl implements UsuarioService {
         }
     }
 
+    
+        @Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+            public void deletarUsuario(UsuarioBean usuarioBean){
+        
+        try {
+            usuarioDAO.excluir(usuarioBean.getInt_usuario_id());
+        } catch (ExceptionTratada ex) {
+            Logger.getLogger(UsuarioServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * método responsável pelas regras de implementação da regra de negócio pertencente a alterar usuário
      * @param usuarioBean

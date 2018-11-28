@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Service
 @Transactional
@@ -36,6 +38,16 @@ public class FisioterapeutaServiceImpl implements FisioterapeutaService{
             return montarErro(e);
         }
     }
+    
+        @Transactional(readOnly = false, propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
+            public void deletarFisioterapeuta(FisioterapeutaBean fisioterapeutaBean){
+        
+        try {
+            fisioterapeutaDAO.excluir(fisioterapeutaBean.getInt_fisioterapeuta_id());
+        } catch (ExceptionTratada ex) {
+            Logger.getLogger(FisioterapeutaServiceImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }    
 
     @Transactional(readOnly=false, propagation = Propagation.REQUIRED, rollbackFor=Exception.class)
     public FisioterapeutaBean  alterarFisioterapeuta(FisioterapeutaBean  fisioterapeutaBean){

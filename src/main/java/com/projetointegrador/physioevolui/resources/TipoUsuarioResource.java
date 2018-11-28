@@ -66,4 +66,12 @@ public class TipoUsuarioResource {
         return new ResponseEntity<>(tipoUsuarioBuilder.montarJsonListTipoUsuarioBean(tipoUsuarioService.listarTiposUsuarios()), HttpStatus.OK);
     }
 
+    
+    @RequestMapping(value = "/deletar", method = RequestMethod.POST) 
+    public ResponseEntity<Void> deletarTipoUsuario(@Valid @RequestBody TipoUsuarioBean bean) {
+
+        tipoUsuarioService.deletarTipoUsuario(bean);
+
+        return ResponseEntity.ok().build();
+    }    
 }

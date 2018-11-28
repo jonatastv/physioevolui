@@ -4,10 +4,27 @@
 
 package com.projetointegrador.physioevolui.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "cidade")
 public class CidadeEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cidade_id")    
     private Integer cidade_id;
+    
+    @Column(name = "uf_id")
     private Integer uf_id;
+    
+    @Column(name = "nome_cidade")
     private String nome_cidade;
 
     public CidadeEntity() {

@@ -9,8 +9,20 @@ import org.springframework.stereotype.Component;
 public class PaisBean {
     private Integer pais_id;
     private String nome_pais;
-
+    private ErroBean erroBean;
+    
+    
     public PaisBean() {
+    }
+
+    public PaisBean(Integer pais_id) {
+        this.pais_id = pais_id;
+    }
+
+    
+    
+    public PaisBean(ErroBean erroBean) {
+        this.erroBean = erroBean;
     }
 
     public PaisBean(Integer pais_id, String nome_pais) {
@@ -33,4 +45,14 @@ public class PaisBean {
     public void setNome_pais(String nome_pais) {
         this.nome_pais = nome_pais;
     }
+
+    public ErroBean getErroBean() {
+        return erroBean;
+    }
+
+    public void setErroBean(ErroBean erroBean) {
+        this.erroBean = erroBean;
+    }
+    
+    
 }

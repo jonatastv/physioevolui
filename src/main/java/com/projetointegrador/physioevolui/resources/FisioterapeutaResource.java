@@ -65,4 +65,13 @@ public class FisioterapeutaResource {
 
         return new ResponseEntity<>(fisioterapeutaBuilder.montarJsonListFisioterapeutaBean(fisioterapeutaService.listarFisioterapeutas()), HttpStatus.OK);
     }
+    
+    
+    @RequestMapping(value = "/deletar", method = RequestMethod.POST) 
+    public ResponseEntity<Void> deletarFisioterapeuta(@Valid @RequestBody FisioterapeutaBean bean) {
+
+        fisioterapeutaService.deletarFisioterapeuta(bean);
+
+        return ResponseEntity.ok().build();
+    }    
 }
