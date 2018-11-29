@@ -23,6 +23,28 @@ public class AvaliacaoBuilder {
     @Autowired
     private AvaliacaoPosturalVistaPosteriorBuilder avaliacaoPosturalVistaPosteriorBuilder;
     
+    @Autowired
+    private TipoMarchaBuilder tipoMarchaBuilder;
+    
+    @Autowired
+    private PacienteBuilder pacienteBuilder;
+    
+    @Autowired
+    private GoniometriaBuilder goniometriaBuilder;
+    
+    @Autowired
+    private PerimetriaBuilder perimetriaBuilder;
+    
+    @Autowired
+    private ExameFisicoBuilder exameFisicoBuilder;
+    
+    @Autowired
+    private ApvLateralBuilder apvLateralBuilder;
+    
+    @Autowired
+    private ApvAnteriorBuilder apvanteriorBuilder;
+            
+    
     //public AvaliacaoEntity montarAvaliacaoEntity(AvaliacaoBean avaliacaoBean, UsuarioBean usuarioBean, PacienteBean pacienteBean, MedicoResponsavelBean medicoResponsavelBean){
      //   AvaliacaoEntity entity = new AvaliacaoEntity();
 //        if (!utils.isEmpty(String.valueOf(avaliacaoBean.getAvaliacao_Id())))
@@ -51,6 +73,14 @@ public class AvaliacaoBuilder {
             avaliacaoBean.setInt_avaliacao_id(avaliacaoEntity.getInt_avaliacao_id());
             avaliacaoBean.setAvaliacaoPosturalVistaPosteriorBean(avaliacaoPosturalVistaPosteriorBuilder.montarAvaliacaoPosturalVistaPosteriorBean(avaliacaoEntity.getAvaliacaoPosturalVistaPosteriorEntity()));
              avaliacaoBean.setFisioterapeutaBean(fisioterapeutaBuilder.montarFisioterapeutaBean(avaliacaoEntity.getFisioterapeutaEntity()));
+             avaliacaoBean.setTipoMarchaBean(tipoMarchaBuilder.montarTipoMarchaBean(avaliacaoEntity.getTipoMarchaEntity()));
+             avaliacaoBean.setApvAnteriorBean(apvanteriorBuilder.montarApvAnteriorBean(avaliacaoEntity.getApvAnteriorEntity()));
+             avaliacaoBean.setApvLateralBean(apvLateralBuilder.montarApvLateralBean(avaliacaoEntity.getApvLateralEntity()));
+             avaliacaoBean.setExameFisicoBean(exameFisicoBuilder.montarExameFisicoBean(avaliacaoEntity.getExameFisicoEntity()));
+             avaliacaoBean.setGoniometriaBean(goniometriaBuilder.montarGoniometriaBean(avaliacaoEntity.getGoniometriaEntity()));
+             avaliacaoBean.setPacienteBean(pacienteBuilder.montarPacienteBean(avaliacaoEntity.getPacienteEntity()));
+             avaliacaoBean.setPerimetriaBean(perimetriaBuilder.montarPerimetriaBean(avaliacaoEntity.getPerimetriaEntity()));
+          
           /*  if (avaliacaoEntity.getAvaliacaoPosturalVistaPosteriorEntity()!= null)
                 avaliacaoBean.setAvaliacaoPosturalVistaPosteriorBean(avaliacaoPosturalVistaPosteriorBuilder.montarAvaliacaoPosturalVistaPosteriorBean(avaliacaoEntity.getAvaliacaoPosturalVistaPosteriorEntity()));
         
@@ -68,9 +98,16 @@ public class AvaliacaoBuilder {
 
         avaliacaoEntity.setInt_avaliacao_id(bean.getInt_avaliacao_id());
         avaliacaoEntity.setFisioterapeutaEntity(fisioterapeutaBuilder.montarFisioterapeutaEntity(bean.getFisioterapeutaBean()));
-        
         avaliacaoEntity.setAvaliacaoPosturalVistaPosteriorEntity(avaliacaoPosturalVistaPosteriorBuilder.montarAvaliacaoPosturalVistaPosteriorEntity(bean.getAvaliacaoPosturalVistaPosteriorBean()));
-
+             avaliacaoEntity.setTipoMarchaEntity(tipoMarchaBuilder.montarTipoMarchaEntity(bean.getTipoMarchaBean()));
+             avaliacaoEntity.setApvAnteriorEntity(apvanteriorBuilder.montarApvAnteriorEntity(bean.getApvAnteriorBean()));
+             avaliacaoEntity.setApvLateralEntity(apvLateralBuilder.montarApvLateralEntity(bean.getApvLateralBean()));
+             avaliacaoEntity.setExameFisicoEntity(exameFisicoBuilder.montarExameFisicoEntity(bean.getExameFisicoBean()));
+             avaliacaoEntity.setGoniometriaEntity(goniometriaBuilder.montarGoniometriaEntity(bean.getGoniometriaBean()));
+             avaliacaoEntity.setPacienteEntity(pacienteBuilder.montarPacienteEntity(bean.getPacienteBean()));
+             avaliacaoEntity.setPerimetriaEntity(perimetriaBuilder.montarPerimetriaEntity(bean.getPerimetriaBean()));
+        
+        
         return avaliacaoEntity;
     }
        
@@ -128,7 +165,28 @@ public class AvaliacaoBuilder {
                     jsonObject.put("int_fisioterapeuta_id", avaliacaoBean.getFisioterapeutaBean());
                 if (avaliacaoBean.getAvaliacaoPosturalVistaPosteriorBean() != null)
                     jsonObject.put("avaliacaoposturalvistaposterior_id", avaliacaoBean.getAvaliacaoPosturalVistaPosteriorBean());
-            
+                if (avaliacaoBean.getApvAnteriorBean()!= null)
+                    jsonObject.put("int_id_apv_anterior", avaliacaoBean.getApvAnteriorBean());
+                
+                if (avaliacaoBean.getApvLateralBean()!= null)
+                    jsonObject.put("int_id_apv_lateral", avaliacaoBean.getApvLateralBean());
+                
+                if (avaliacaoBean.getGoniometriaBean()!= null)
+                    jsonObject.put("int_id_goniometria", avaliacaoBean.getGoniometriaBean());
+                
+                if (avaliacaoBean.getExameFisicoBean()!= null)
+                    jsonObject.put("int_id_exame_fisico", avaliacaoBean.getExameFisicoBean());
+                
+                if (avaliacaoBean.getPerimetriaBean()!= null)
+                    jsonObject.put("int_id_perimetria", avaliacaoBean.getPerimetriaBean());
+                
+                if (avaliacaoBean.getTipoMarchaBean()!= null)
+                    jsonObject.put("int_id_tipo_marcha", avaliacaoBean.getTipoMarchaBean());
+                
+                if (avaliacaoBean.getPacienteBean()!= null)
+                    jsonObject.put("int_id_paciente", avaliacaoBean.getPacienteBean());
+                
+                
             }
         }
 

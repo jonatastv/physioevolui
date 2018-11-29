@@ -3,6 +3,7 @@ com\projetointegrador\physioevolui\builder\ExameFisicoBuilder.class
 com\projetointegrador\physioevolui\service\AvaliacaoPosturalVistaPosteriorService.class
 com\projetointegrador\physioevolui\entity\FisioterapeutaEntity.class
 com\projetointegrador\physioevolui\DAO\Impl\ExameFisicoDAOImpl.class
+com\projetointegrador\physioevolui\DAO\Impl\PaisDAOImpl.class
 com\projetointegrador\physioevolui\resources\UfResource.class
 com\projetointegrador\physioevolui\builder\PerimetriaBuilder.class
 com\projetointegrador\physioevolui\service\FisioterapeutaService.class
@@ -36,6 +37,7 @@ com\projetointegrador\physioevolui\resources\AvaliacaoPosturalVistaPosteriorReso
 com\projetointegrador\physioevolui\builder\FisioterapeutaBuilder.class
 com\projetointegrador\physioevolui\builder\UsuarioBuilder.class
 com\projetointegrador\physioevolui\DAO\Impl\PacienteDAOImpl.class
+com\projetointegrador\physioevolui\service\CidadeService.class
 com\projetointegrador\physioevolui\bean\ErroBean.class
 com\projetointegrador\physioevolui\resources\TipoUsuarioResource.class
 com\projetointegrador\physioevolui\service\TipoUsuarioService.class
@@ -43,6 +45,7 @@ com\projetointegrador\physioevolui\service\impl\ApvAnteriorServiceImpl.class
 com\projetointegrador\physioevolui\service\impl\ApvLateralServiceImpl.class
 com\projetointegrador\physioevolui\entity\ApvAnteriorEntity.class
 com\projetointegrador\physioevolui\DAO\Impl\AvaliacaoDAOImpl.class
+com\projetointegrador\physioevolui\DAO\PaisDAO.class
 com\projetointegrador\physioevolui\service\PerimetriaService.class
 com\projetointegrador\physioevolui\service\impl\FisioterapeutaServiceImpl.class
 com\projetointegrador\physioevolui\service\impl\PacienteServiceImpl.class
@@ -56,8 +59,11 @@ com\projetointegrador\physioevolui\service\ApvLateralService.class
 com\projetointegrador\physioevolui\DAO\Impl\AvaliacaoPosturalVistaPosteriorDAOImp.class
 com\projetointegrador\physioevolui\builder\JsonBuilder.class
 com\projetointegrador\physioevolui\bean\UfBean.class
+com\projetointegrador\physioevolui\service\PaisService.class
 com\projetointegrador\physioevolui\service\impl\GoniometriaServiceImpl.class
+com\projetointegrador\physioevolui\DAO\Impl\CidadeDAOImpl.class
 com\projetointegrador\physioevolui\entity\UfEntity.class
+com\projetointegrador\physioevolui\service\impl\CidadeServiceImpl.class
 com\projetointegrador\physioevolui\service\impl\TipoUsuarioServiceImpl.class
 com\projetointegrador\physioevolui\DAO\ApvAnteriorDAO.class
 com\projetointegrador\physioevolui\DAO\TipoMarchaDAO.class
@@ -76,6 +82,7 @@ com\projetointegrador\physioevolui\builder\TipoMarchaBuilder.class
 com\projetointegrador\physioevolui\DAO\Impl\GoniometriaDAOImpl.class
 com\projetointegrador\physioevolui\entity\PerimetriaEntity.class
 com\projetointegrador\physioevolui\bean\FisioterapeutaBean.class
+com\projetointegrador\physioevolui\service\impl\PaisServiceImpl.class
 com\projetointegrador\physioevolui\resources\ApvAnteriorResource.class
 com\projetointegrador\physioevolui\service\UfService.class
 com\projetointegrador\physioevolui\resources\ApvLateralResource.class
@@ -97,8 +104,11 @@ com\projetointegrador\physioevolui\entity\GoniometriaEntity.class
 com\projetointegrador\physioevolui\bean\GoniometriaBean.class
 com\projetointegrador\physioevolui\resources\FisioterapeutaResource.class
 com\projetointegrador\physioevolui\resources\GoniometriaResource.class
+com\projetointegrador\physioevolui\resources\PaisResource.class
 com\projetointegrador\physioevolui\DAO\GenericoDAO.class
 com\projetointegrador\physioevolui\entity\CidadeEntity.class
+com\projetointegrador\physioevolui\DAO\CidadeDAO.class
+com\projetointegrador\physioevolui\resources\CidadeResource.class
 com\projetointegrador\physioevolui\builder\MedicoResponsavelBuilder.class
 com\projetointegrador\physioevolui\DAO\Impl\ApvLateralDAOImpl.class
 com\projetointegrador\physioevolui\entity\ApvLateralEntity.class
