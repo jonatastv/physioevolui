@@ -12,6 +12,11 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collection;
 import java.util.List;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.projetointegrador.physioevolui.enums.Perfil;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * classe utilzada para mapear o banco no hibernate
@@ -28,8 +33,18 @@ public class UsuarioEntity implements Serializable {
     @Column(name = "str_login", nullable = false, length = 80)
     private String str_login;
 
+    @JsonIgnore
     @Column(name = "str_password", nullable = false, length = 80)
     private String str_password;
+    
+    @Column(name = "str_email", nullable = false, length = 100)
+    private String str_email;
+    
+    
+    @ElementCollection(fetch=FetchType.EAGER)
+    @CollectionTable(name="PERFIS")
+    private Set<Integer> perfis = new HashSet<>();
+    
     /**
      * mapeando registro 1-n
      */
@@ -44,13 +59,16 @@ public class UsuarioEntity implements Serializable {
     private FisioterapeutaEntity fisioterapeutaEntity;
 
     public UsuarioEntity() {
+        addPerfil(Perfil.CLIENTE);
     }
 
-    public UsuarioEntity(String str_login, String str_password, TipoUsuarioEntity tipoUsuarioEntity, FisioterapeutaEntity fisioterapeutaEntity) {
+    public UsuarioEntity(String str_login, String str_password, TipoUsuarioEntity tipoUsuarioEntity, FisioterapeutaEntity fisioterapeutaEntity , String str_email) {
         this.str_login = str_login;
         this.str_password = str_password;
         this.tipoUsuarioEntity = tipoUsuarioEntity;
         this.fisioterapeutaEntity = fisioterapeutaEntity;
+        this.str_email = str_email;
+        addPerfil(Perfil.CLIENTE);
     }
 
     public FisioterapeutaEntity getFisioterapeutaEntity() {
@@ -92,4 +110,22 @@ public class UsuarioEntity implements Serializable {
     public void setTipoUsuarioEntity(TipoUsuarioEntity tipoUsuarioEntity) {
         this.tipoUsuarioEntity = tipoUsuarioEntity;
     }
+
+    public String getStr_email() {
+        return str_email;
+    }
+
+    public void setStr_email(String str_email) {
+        this.str_email = str_email;
+    }
+    
+    
+    	public Set<Perfil> getPerfis() {
+		return perfis.stream().map(x -> Perfil.toEnum(x)).collect(Collectors.toSet());
+	}
+	
+	public void addPerfil(Perfil perfil) {
+		perfis.add(perfil.getCod());
+	}
+    
 }

@@ -17,6 +17,7 @@ public class UsuarioBean {
     private String str_password;
     private TipoUsuarioBean tipoUsuarioBean;
     private FisioterapeutaBean fisioterapeutaBean;
+    private String str_email;
     private ErroBean erroBean;
 
     public UsuarioBean() {
@@ -30,12 +31,13 @@ public class UsuarioBean {
         this.int_usuario_id = int_usuario_id;
     }
 
-    public UsuarioBean(Integer int_usuario_id, String str_login, String str_password, TipoUsuarioBean tipoUsuarioBean, FisioterapeutaBean fisioterapeutaBean) {
+    public UsuarioBean(Integer int_usuario_id, String str_login, String str_password, TipoUsuarioBean tipoUsuarioBean, FisioterapeutaBean fisioterapeutaBean, String str_email) {
         this.int_usuario_id = int_usuario_id;
         this.str_login = str_login;
         this.str_password = str_password;
         this.tipoUsuarioBean = tipoUsuarioBean;
         this.fisioterapeutaBean = fisioterapeutaBean;
+        this.str_email = str_email;
     }
 
     public ErroBean getErroBean() {
@@ -85,4 +87,14 @@ public class UsuarioBean {
     public void setFisioterapeutaBean(FisioterapeutaBean fisioterapeutaBean) {
         this.fisioterapeutaBean = fisioterapeutaBean;
     }
+
+    public String getStr_email() {
+        return str_email;
+    }
+
+    public void setStr_email(String str_email) {
+        this.str_email = str_email;
+    }
+    
+    
 }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 /**
  * Classe utilizada para converter dados da tela para a entidade, entidade para tela e para montar o Json de retorno
@@ -21,6 +22,9 @@ public class UsuarioBuilder {
 
     @Autowired
     private TipoUsuarioBuilder tipoUsuarioBuilder;
+    
+    @Autowired
+    private BCryptPasswordEncoder pe;
 
     /**
      * método para converter o dado que vem da entidade para a tela
@@ -33,6 +37,8 @@ public class UsuarioBuilder {
             usuarioBean.setInt_usuario_id(usuarioEntity.getInt_usuario_id());
             usuarioBean.setStr_login(usuarioEntity.getStr_login());
             usuarioBean.setStr_password(usuarioEntity.getStr_password());
+            usuarioBean.setStr_email(usuarioEntity.getStr_email());
+            
             if (usuarioEntity.getTipoUsuarioEntity() != null)
                 usuarioBean.setTipoUsuarioBean(tipoUsuarioBuilder.montarTipoUsuarioBean(usuarioEntity.getTipoUsuarioEntity()));
         }
@@ -50,7 +56,8 @@ public class UsuarioBuilder {
 
         usuarioEntity.setInt_usuario_id(bean.getInt_usuario_id());
         usuarioEntity.setStr_login(bean.getStr_login());
-        usuarioEntity.setStr_password(bean.getStr_password());
+        usuarioEntity.setStr_password(pe.encode(bean.getStr_password()));
+        usuarioEntity.setStr_email(bean.getStr_email());
         usuarioEntity.setTipoUsuarioEntity(tipoUsuarioBuilder.montarTipoUsuarioEntity(bean.getTipoUsuarioBean()));
 
         return usuarioEntity;
@@ -121,6 +128,8 @@ public class UsuarioBuilder {
                 jsonObject.put("int_usuario_id", usuarioBean.getInt_usuario_id());
                 jsonObject.put("str_login", usuarioBean.getStr_login());
                 jsonObject.put("str_password", usuarioBean.getStr_password());
+                jsonObject.put("str_email", usuarioBean.getStr_email());
+                
 
                 if (usuarioBean.getTipoUsuarioBean() != null)
                     jsonObject.put("tipoUsuarioBean", usuarioBean.getTipoUsuarioBean().getInt_tipo_usuario());

@@ -27,6 +27,7 @@ C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\co
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\AvaliacaoDAOImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\entity\ApvAnteriorEntity.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\UsuarioService.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\security\JWTAuthenticationFilter.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\impl\UsuarioServiceImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\UfDAO.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\TipoMarchaDAOImpl.java
@@ -78,10 +79,12 @@ C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\co
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\GoniometriaDAOImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\builder\TipoUsuarioBuilder.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\UsuarioDAO.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\security\JWTUtil.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\entity\FisioterapeutaEntity.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\ApvLateralResource.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\TipoMarchaService.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\builder\UsuarioBuilder.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\impl\UserDetailsServiceImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\CidadeResource.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\UfDAOImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\ExameFisicoResource.java
@@ -94,6 +97,7 @@ C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\co
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\GoniometriaDAO.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\builder\FisioterapeutaBuilder.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\impl\ApvAnteriorServiceImpl.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\bean\CredenciaisDTO.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\ApvAnteriorResource.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\ApvLateralDAOImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\AvaliacaoResource.java
@@ -106,6 +110,7 @@ C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\co
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\builder\AvaliacaoPosturalVistaPosteriorBuilder.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\ApvLateralService.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\AvaliacaoPosturalVistaPosteriorResource.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\enums\Perfil.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\entity\MedicoResponsavelEntity.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\entity\AvaliacaoPosturalVistaPosteriorEntity.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\resources\UsuarioResource.java
@@ -123,9 +128,11 @@ C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\co
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\AvaliacaoPosturalVistaPosteriorService.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\PaisDAO.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\ApvAnteriorService.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\config\SecurityConfig.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\AvaliacaoPosturalVistaPosteriorDAOImp.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\GoniometriaService.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\DAO\Impl\CidadeDAOImpl.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\service\PacienteService.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\bean\FisioterapeutaBean.java
 C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\entity\ExameFisicoEntity.java
+C:\Users\mizae\Documents\NetBeansProjects\physioevolui\back_end\src\main\java\com\projetointegrador\physioevolui\security\UserSS.java
